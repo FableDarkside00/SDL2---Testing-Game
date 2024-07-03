@@ -1,6 +1,7 @@
 #include "SDL2/SDL.h"
 #include <stdio.h>
 
+
 typedef struct
 {
     int x, y;
