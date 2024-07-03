@@ -1,76 +1,14 @@
 #include "SDL2/SDL.h"
 #include <stdio.h>
-/// @brief 
+#include "process_game.h"
+#include "render_game.h"
+
 typedef struct
 {
     int x, y;
     short life;
     char *name;
 } Man;
-
-int processEvents(SDL_Window *window)
-{
-    //Inicializa os eventos no objeto event
-    SDL_Event event;
-
-    //Define 'termino' = 0
-    int done = 0;
-        
-    //SDL_PollEvent() Checa a ocorrencia e manutenção da ordem de eventos
-    while (SDL_PollEvent(&event))
-    {
-        //Switch para os tipos de evento
-        switch (event.type)
-        {
-            case SDL_WINDOWEVENT_CLOSE:
-            {    
-                if (window)
-                {
-                    SDL_DestroyWindow(window);
-                    window = NULL;
-                }
-            }
-            break;
-            
-            case SDL_KEYDOWN:
-            {
-                //Switch para os eventos de teclado
-                switch (event.key.keysym.sym)
-                {
-                case SDLK_ESCAPE:
-                {
-                    done = 1;
-                    break;
-                }
-                break;
-                }
-            }
-            break;
-        }    
-    }
-
-    return done;
-}
-
-void doRender(SDL_Renderer *renderer)
-{
-    //Definir a cor do render
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-
-    //Limpar tela (para azul)
-    SDL_RenderClear(renderer);
-
-    //Definir a cor de desenho para branco
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-    //Desenha o objeto (Quadrado)
-    SDL_Rect rect = {220,140,200,200};
-    SDL_RenderFillRect(renderer, &rect);
-
-    //Mostrando o desenho na tela
-    SDL_RenderPresent(renderer);
-
-}
 
 int main(int argc, char const *argv[])
 {
