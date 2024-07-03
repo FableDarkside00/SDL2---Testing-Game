@@ -1,7 +1,6 @@
 #include "SDL2/SDL.h"
 #include <stdio.h>
-
-
+/// @brief 
 typedef struct
 {
     int x, y;
@@ -104,7 +103,7 @@ int main(int argc, char const *argv[])
     
         //Renderiza os elementos no display
         doRender(renderer);
-            
+
         //100 milisegundos delay para presevar o pc
         SDL_Delay(100);
 
