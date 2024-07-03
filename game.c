@@ -1,14 +1,8 @@
-#include "SDL2/SDL.h"
 #include <stdio.h>
+#include "square.h"
+#include "SDL2/SDL.h"
 #include "process_game.h"
 #include "render_game.h"
-
-typedef struct
-{
-    int x, y;
-    short life;
-    char *name;
-} Man;
 
 int main(int argc, char const *argv[])
 {

@@ -1,7 +1,11 @@
+#include <stdio.h>
+#include "square.h"
 #include "SDL2/SDL.h"
 
 int processEvents(SDL_Window *window)
 {
+    square.x = 220;
+
     //Inicializa os eventos no objeto event
     SDL_Event event;
 
@@ -36,15 +40,21 @@ int processEvents(SDL_Window *window)
                 }
                 case SDLK_RIGHT:
                 {
+                    square.x += 5;
+
                     break;
                 }
-                case SDL_FINGERUP:
+                case SDLK_LEFT:
+                {
+                    square.x -= 5;
+                    break;
+                }
                 break;
                 }
             }
             break;
         }    
     }
-
+    posx = square.x;
     return done;
 }
