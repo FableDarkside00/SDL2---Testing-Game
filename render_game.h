@@ -14,7 +14,7 @@ void doRender(SDL_Renderer *renderer)
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
     //Desenha o objeto (Quadrado)
-    SDL_Rect rect = {posx,140,200,200};
+    SDL_Rect rect = {*square_ptrx,*square_ptry,50,50};
     SDL_RenderFillRect(renderer, &rect);
 
     //Mostrando o desenho na tela

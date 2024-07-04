@@ -14,11 +14,11 @@ int main(int argc, char const *argv[])
 
     //Cria uma janela com as seguintes definições
     window = SDL_CreateWindow("Jogo",                   //Nome da Janela
-                               SDL_WINDOWPOS_UNDEFINED, //Posição inicial x
-                               SDL_WINDOWPOS_UNDEFINED, //Posição Inicial y
-                               640,                     //Largura em pixels
-                               480,                     //Altura em pixels
-                               0                        //Flags
+                               SDL_WINDOW_FULLSCREEN, //Posição inicial x
+                               SDL_WINDOW_FULLSCREEN, //Posição Inicial y
+                               screen_w,                     //Largura em pixels
+                               screen_h,                     //Altura em pixels
+                               0                             //Flags
     );
     
     //Cria o render(desenho), usando a GPU
@@ -39,7 +39,10 @@ int main(int argc, char const *argv[])
         //100 milisegundos delay para presevar o pc
         SDL_Delay(100);
 
+    printf("| posy: %d|\n\a", *square_ptry);
+    printf("| posx: %d|\n\a", *square_ptrx);
     }
+
 
     //Fecha e destroi a janela
     SDL_DestroyWindow(window);
